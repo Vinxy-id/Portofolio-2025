@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Vinxy Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/portofolio.css">
+</head>
+<body>
+    <div class="blur-bg">
+        <div class="blur-circle circle-1"></div>
+        <div class="blur-circle circle-2"></div>
+        <div class="blur-circle circle-3"></div>
+        <div class="blur-circle circle-4"></div>
+        <div class="blur-circle circle-5"></div>
+    </div>
+
+    <div class="container">
+        <header class="animated">
+            <a href="index.html" class="logo">Portfolio</a>
+            <nav class="navbar">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="portofolio.html" class="nav-link active">Portfolio</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <section class="portfolio animated">
+            <h2>My Portfolio</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="design">Graphic Design</button>
+                <button class="filter-btn" data-filter="video">Video Editing</button>
+                <button class="filter-btn" data-filter="ui">UI/UX</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item interactive-blur" data-category="design">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80" alt="Brand Identity Design">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Brand Identity Design</h3>
+                        <p>Complete brand identity design for a tech startup including logo, color palette, and brand guidelines.</p>
+                        <span class="category design">Graphic Design</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item interactive-blur" data-category="design">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80" alt="Social Media Campaign">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Social Media Campaign</h3>
+                        <p>Visual content creation for a 30-day social media marketing campaign.</p>
+                        <span class="category design">Graphic Design</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item interactive-blur" data-category="design">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80" alt="Product Packaging">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Product Packaging</h3>
+                        <p>Packaging design for a new line of organic skincare products.</p>
+                        <span class="category design">Graphic Design</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item interactive-blur" data-category="video">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Corporate Video">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Corporate Video</h3>
+                        <p>Editing and post-production for a corporate promotional video.</p>
+                        <span class="category video">Video Editing</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item interactive-blur" data-category="video">
+                    <div class="portfolio-img">
+                        <img src="assets/adobe.jpeg" alt="Music Video">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Music Video</h3>
+                        <p>Creative editing for an indie band's music video with advanced color grading.</p>
+                        <span class="category video">Video Editing</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item interactive-blur" data-category="ui">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Mobile App Design">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Mobile App Design</h3>
+                        <p>UI/UX design for a fitness tracking mobile application.</p>
+                        <span class="category ui">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="Javascript/portofolio.js"></script>
+<script src="Javascript/mobile.js"></script>
+</body>
+</html>
