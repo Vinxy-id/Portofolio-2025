@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const subject = formData.get('subject')?.trim() || '';
         const message = formData.get('message')?.trim() || '';
         
-        // 🔒 VALIDASI NAMA SUPER KETAT
+        //  VALIDASI NAMA SUPER KETAT
         if (name.length < 2) {
             errors.push('Name must be at least 2 characters');
         }
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             errors.push('Name can only contain letters and spaces');
         }
         
-        // 🔒 VALIDASI EMAIL SUPER KETAT
+        //  VALIDASI EMAIL SUPER KETAT
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!email) {
             errors.push('Email is required');
@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
             errors.push('Email too long');
         }
         
-        // 🔒 CEK EMAIL TEMPORARY/DISPOSABLE
+        //  CEK EMAIL TEMPORARY/DISPOSABLE
         const tempDomains = ['tempmail.com', '10minutemail.com', 'guerrillamail.com', 'mailinator.com', 'yopmail.com', 'fakeemail.com'];
         const emailDomain = email.split('@')[1];
         if (tempDomains.some(domain => emailDomain.includes(domain))) {
             errors.push('Temporary/disposable emails are not allowed');
         }
         
-        // 🔒 VALIDASI SUBJECT
+        //  VALIDASI SUBJECT
         if (subject.length < 5) {
             errors.push('Subject must be at least 5 characters');
         }
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             errors.push('Subject too long (max 100 characters)');
         }
         
-        // 🔒 VALIDASI MESSAGE
+        //  VALIDASI MESSAGE
         if (message.length < 20) {
             errors.push('Message must be at least 20 characters');
         }
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             errors.push('Message too long (max 1000 characters)');
         }
         
-        // 🔒 ANTI-SPAM: Cek kata-kata spam
+        //  ANTI-SPAM: Cek kata-kata spam
         const spamWords = ['viagra', 'casino', 'lottery', 'click here', 'make money', 'urgent', 'buy now', 'discount'];
         const lowerMessage = message.toLowerCase();
         if (spamWords.some(word => lowerMessage.includes(word))) {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return errors;
     }
     
-    // 🔒 HONEYPOT FIELD (Anti-bot)
+    //  HONEYPOT FIELD (Anti-bot)
     function addHoneypotField() {
         const honeypot = document.createElement('input');
         honeypot.type = 'text';
@@ -83,14 +83,14 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // 🔒 CEK HONEYPOT (jika diisi, berarti bot)
+        //  CEK HONEYPOT (jika diisi, berarti bot)
         const honeypot = this.querySelector('input[name="website"]');
         if (honeypot.value) {
             console.log('Bot detected via honeypot');
             return; // Silent fail untuk bot
         }
         
-        // 🔒 CEK ATTEMPTS LIMIT
+        //  CEK ATTEMPTS LIMIT
         if (submitAttempts >= MAX_ATTEMPTS) {
             Swal.fire({
                 icon: 'error',
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="ri-loader-4-line spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // 🔒 VALIDATE USER INPUT
+            //  VALIDATE USER INPUT
             const formData = new FormData(this);
             const validationErrors = validateForm(formData);
             
@@ -129,13 +129,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // 🔒 TAMBAH DELAY (anti-spam)
+            // TAMBAH DELAY (anti-spam)
             await new Promise(resolve => setTimeout(resolve, 2000));
             
             // Kirim email
             const result = await emailjs.sendForm('service_vdtxsa1', 'template_rn2ty5m', this);
             
-            // 🔒 INCREMENT ATTEMPTS
+            // INCREMENT ATTEMPTS
             submitAttempts++;
             
             Swal.fire({
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
             
         } catch (error) {
-            // 🔒 INCREMENT ATTEMPTS MESKI ERROR
+            // INCREMENT ATTEMPTS MESKI ERROR
             submitAttempts++;
             
             console.error('EmailJS Error:', error);
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 🔒 REAL-TIME VALIDATION
+    // REAL-TIME VALIDATION
     const emailInput = contactForm.querySelector('input[type="email"]');
     if (emailInput) {
         emailInput.addEventListener('blur', function() {
