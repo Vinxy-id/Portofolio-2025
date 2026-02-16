@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const subject = formData.get('subject')?.trim() || '';
         const message = formData.get('message')?.trim() || '';
         
-        //  VALIDASI NAMA SUPER KETAT
+        //  VALIDASI NAMA
         if (name.length < 2) {
             errors.push('Name must be at least 2 characters');
         }
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             errors.push('Name can only contain letters and spaces');
         }
         
-        //  VALIDASI EMAIL SUPER KETAT
+        //  VALIDASI EMAIL
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!email) {
             errors.push('Email is required');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             errors.push('Email too long');
         }
         
-        //  CEK EMAIL TEMPORARY/DISPOSABLE
+        //  CEK EMAIL TEMPORARY
         const tempDomains = ['tempmail.com', '10minutemail.com', 'guerrillamail.com', 'mailinator.com', 'yopmail.com', 'fakeemail.com'];
         const emailDomain = email.split('@')[1];
         if (tempDomains.some(domain => emailDomain.includes(domain))) {
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // TAMBAH DELAY (anti-spam)
+            // DELAY (anti-spam)
             await new Promise(resolve => setTimeout(resolve, 2000));
             
             // Kirim email
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
             
         } catch (error) {
-            // INCREMENT ATTEMPTS MESKI ERROR
+            // INCREMENT ATTEMPTS 
             submitAttempts++;
             
             console.error('EmailJS Error:', error);
