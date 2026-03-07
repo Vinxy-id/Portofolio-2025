@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    emailjs.init(CONFIG.EMAILJS_PUBLIC_KEY);
+    emailjs.init("IFIePzX9BzSRR1ITj");
     
     const contactForm = document.getElementById('contactForm');
     let submitAttempts = 0; // Counter untuk batasi percobaan
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             await new Promise(resolve => setTimeout(resolve, 2000));
             
             // Kirim email
-            const result = await emailjs.sendForm(CONFIG.EMAILJS_SERVICE_ID, CONFIG.EMAILJS_TEMPLATE_ID, this);
+            const result = await emailjs.sendForm('service_vdtxsa1', 'template_rn2ty5m', this);
             
             // INCREMENT ATTEMPTS
             submitAttempts++;
