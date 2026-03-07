@@ -37,9 +37,12 @@
 
 body {
     min-height: 100vh;
-    background: 
-        linear-gradient(var(--black-70), var(--black-30)),
-        url(../assets/background.jpg) no-repeat center center / cover;
+    background-color: #222;
+    background-image: linear-gradient(var(--black-70), var(--black-30)), url("../assets/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     padding: var(--space-md);
     color: var(--white);
 }
@@ -101,7 +104,6 @@ header {
 .hamburger {
     display: none; /* Sembunyi di desktop */
     flex-direction: column;
-    justify-content: space-between;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -115,9 +117,11 @@ header {
 .hamburger span {
     display: block;
     position: absolute;
+    left: 0;
     width: 100%;
     height: 3px;
-    background: var(--white);
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.8);
     transition: all 0.3s ease;
     border-radius: 2px;
     transform-origin: center;
@@ -165,32 +169,40 @@ header {
     }
     
     .navbar {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: min(85%, 320px);
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.98);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+        width: 220px;
+        height: auto;
+        background: rgba(20, 20, 20, 0.95);
         backdrop-filter: blur(25px);
         flex-direction: column;
-        padding: 80px var(--space-xl) var(--space-xl);
-        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: var(--space-md);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
         z-index: 1000;
-        gap: var(--space-md);
+        gap: var(--space-sm);
         justify-content: flex-start;
         align-items: flex-start;
-        overflow-y: auto;
+        
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .navbar.active {
-        left: 0;
-        box-shadow: 5px 0 30px rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(15px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
     }
     
     .navbar a {
-        font-size: var(--text-lg);
+        font-size: var(--text-base);
         padding: var(--space-sm) var(--space-md);
-        margin: var(--space-xs) 0;
+        margin: 0;
         border-bottom: 2px solid transparent;
         width: 100%;
         display: block;
@@ -204,44 +216,21 @@ header {
         background: var(--white-10);
     }
     
-    /* Prevent body scroll when menu is open */
-    body.menu-open {
-        overflow: hidden;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-    }
-    
-    /* Add overlay when menu is open */
+    /* Remove original overlay */
     .navbar::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
+        display: none;
     }
     
-    .navbar.active::before {
-        opacity: 1;
-        pointer-events: all;
-    }
-    
-    /* Adjust header for mobile */
+    /* Adjust header for mobile dropdown anchor */
     header {
         position: relative;
-        z-index: 1002;
+        z-index: 1005;
     }
     
-    /* Ensure content doesn't shift */
     .container {
         position: relative;
         z-index: 1;
+        overflow-x: hidden;
     }
 }
 
@@ -261,8 +250,8 @@ header {
     }
     
     .navbar {
-        width: min(90%, 280px);
-        padding: 70px var(--space-lg) var(--space-lg);
+        width: 220px;
+        padding: var(--space-md);
     }
     
     .navbar a {
