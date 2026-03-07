@@ -101,39 +101,46 @@ header {
 .hamburger {
     display: none; /* Sembunyi di desktop */
     flex-direction: column;
+    justify-content: space-between;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: var(--space-xs);
-    width: 30px;
+    padding: 0;
+    width: 32px;
     height: 24px;
     position: relative;
-    z-index: 1001;
+    z-index: 9999;
 }
 
 .hamburger span {
-    display: block; /* PERBAIKAN: ganti var(--white) dengan block */
+    display: block;
+    position: absolute;
     width: 100%;
     height: 3px;
     background: var(--white);
-    margin: 3px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
     transform-origin: center;
 }
 
 /* Hamburger Animation */
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 10px; }
+.hamburger span:nth-child(3) { top: 20px; }
+
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg);
+    top: 10px;
 }
 
 .hamburger.active span:nth-child(2) {
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateX(-20px);
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg);
+    top: 10px;
 }
 
 /* Animation Classes */
