@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -37,7 +39,7 @@ body {
     min-height: 100vh;
     background: 
         linear-gradient(var(--black-70), var(--black-30)),
-        url(background.jpg) no-repeat center center / cover;
+        url(../assets/background.jpg) no-repeat center center / cover;
     padding: var(--space-md);
     color: var(--white);
 }
@@ -270,18 +272,7 @@ header {
     }
 }
 
-/* Force white text */
-* {
-    color: var(--white) !important;
-}
 
-.btn {
-    color: #333 !important;
-}
-
-.btn:hover {
-    color: var(--white) !important;
-}
 
 .sweetalert-popup {
     backdrop-filter: blur(20px) !important;
