@@ -1,59 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative & Technology Enthusiast| Vinxy</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+    <title>Vinxy Portfolio | Creative & Technology Enthusiast</title>
+    <!-- Remixicons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- EmailJS & SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Unified Styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
+    <!-- Background Blur Circles -->
+    <div class="blur-bg">
+        <div class="blur-circle circle-1"></div>
+        <div class="blur-circle circle-2"></div>
+        <div class="blur-circle circle-3"></div>
+    </div>
 
     <div class="container">
+        <!-- Unified Header -->
         <header class="animated">
-    <a href="index.html" class="logo">Vinxy-ID</a>
-    
-    <button class="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    
-    <nav class="navbar">
-        <a href="home.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="portofolio.html" class="nav-link">Portfolio</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-</header>
+            <a href="#home" class="logo nav-link">Vinxy-ID</a>
 
-            <section class="home animated">
-                <div class="home-detail">
-                    <h1>Alvin Widiantara</h1>
-                    <h2>Graphic Designer & Video Editor</h2>
-                    <p>I'm Alvin Widiantara, an Informatics student with a strong passion for technology, graphic design, and video editing. I enjoy creating visual and functional works ranging from simple designs to more complex multimedia projects. As both a tech enthusiast and creative enthusiast, I'm always eager to experiment, learn new things, and continuously refine my skills to produce better and more meaningful creations.</p>
-                    <div class="download-social">
-                    <a href="https://drive.google.com/file/d/1vb6B6eImfRekznyv7Lk09GXOaYVk4aG0/view?usp=drive_link" class="btn">Download CV</a>
-                        <div class="social-icons">
-                        <a href="https://github.com/Vinxy-id"><i class="ri-github-fill"></i></a>
-                        <a href="https://www.linkedin.com/in/alvin-widiantara-041067360/"><i class="ri-linkedin-fill"></i></a>
-                        <a href="https://www.instagram.com/vinxy.tsx/"><i class="ri-instagram-line"></i></a>
-                        <a href="https://www.tiktok.com/@vinxy070"><i class="ri-tiktok-fill"></i></a>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navbar">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <!-- SPA Content Sections -->
+        <main id="main-content">
+            
+            <!-- HOME SECTION -->
+            <section id="home" class="page-section active animated">
+                <div class="home">
+                    <div class="home-detail">
+                        <h1>Alvin Widiantara</h1>
+                        <h2>Graphic Designer & Video Editor</h2>
+                        <p>I'm Alvin Widiantara, an Informatics student with a strong passion for technology, graphic design, and video editing. I enjoy creating visual and functional works ranging from simple designs to more complex multimedia projects. As both a tech enthusiast and creative enthusiast, I'm always eager to experiment, learn new things, and continuously refine my skills to produce better and more meaningful creations.</p>
+                        <div class="download-social">
+                            <a href="https://drive.google.com/file/d/1vb6B6eImfRekznyv7Lk09GXOaYVk4aG0/view?usp=drive_link" class="btn">Download CV</a>
+                            <div class="social-icons">
+                                <a href="https://github.com/Vinxy-id"><i class="ri-github-fill"></i></a>
+                                <a href="https://www.linkedin.com/in/alvin-widiantara-041067360/"><i class="ri-linkedin-fill"></i></a>
+                                <a href="https://www.instagram.com/vinxy.tsx/"><i class="ri-instagram-line"></i></a>
+                                <a href="https://www.tiktok.com/@vinxy070"><i class="ri-tiktok-fill"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-img">
+                        <div class="img-box">
+                            <img src="assets/me11.png" alt="Alvin Widiantara">
                         </div>
                     </div>
                 </div>
-                <div class="home-img">
-                    <div class="img-box">
-                        <img src="assets/me11.png" alt="Alvin Widiantara">
+            </section>
+
+            <!-- ABOUT SECTION -->
+            <section id="about" class="page-section animated">
+                <div class="about">
+                    <h2>About Me</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>I am an Informatics student dedicated to exploring the synergy between technology and visual storytelling. With a background in graphic design and video editing, I approach every project with a blend of technical precision and artistic flair. My goal is to create digital experiences that are not only functional but also visually captivating. I'm constantly learning and evolving, driven by a desire to craft meaningful work that leaves a lasting impression.</p>
+                        </div>
+                        <div class="skills">
+                            <h3>My Skills</h3>
+                            <div class="skill-item">
+                                <div class="skill-name"><span>Graphic Design</span><span>95%</span></div>
+                                <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name"><span>Video Editing</span><span>90%</span></div>
+                                <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name"><span>UI/UX Design</span><span>?%</span></div>
+                                <div class="skill-bar"><div class="skill-level" style="width: 1%"></div></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
+
+            <!-- PORTFOLIO SECTION -->
+            <section id="portfolio" class="page-section animated">
+                <div class="portfolio">
+                    <h2>My Portfolio</h2>
+                    <div class="portfolio-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="design">Graphic Design</button>
+                        <button class="filter-btn" data-filter="video">Video Editing</button>
+                        <button class="filter-btn" data-filter="ui">UI/UX</button>
+                    </div>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item" data-category="design">
+                            <div class="portfolio-img"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80" alt="Brand Identity"></div>
+                            <div class="portfolio-info"><h3>Brand Identity Design</h3><p>Complete brand identity design for a tech startup including logo and guidelines.</p><span class="category design">Graphic Design</span></div>
+                        </div>
+                        <div class="portfolio-item" data-category="video">
+                            <div class="portfolio-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Corporate Video"></div>
+                            <div class="portfolio-info"><h3>Corporate Video</h3><p>Professional video editing services for commercials and presentations.</p><span class="category video">Video Editing</span></div>
+                        </div>
+                        <div class="portfolio-item" data-category="ui">
+                            <div class="portfolio-img"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80" alt="Mobile App"></div>
+                            <div class="portfolio-info"><h3>Mobile App Design</h3><p>UI/UX design for a fitness tracking mobile application.</p><span class="category ui">UI/UX</span></div>
+                        </div>
+                        <div class="portfolio-item" data-category="video">
+                            <div class="portfolio-img"><img src="assets/adobe.jpeg" alt="Creative Video"></div>
+                            <div class="portfolio-info"><h3>Music Video</h3><p>Creative editing for an indie band's music video.</p><span class="category video">Video Editing</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICES SECTION -->
+            <section id="services" class="page-section animated">
+                <div class="services">
+                    <h2>My Services</h2>
+                    <p class="services-intro">I offer a range of services to bring your creative vision to life.</p>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <div class="service-icon"><i class="ri-palette-line"></i></div>
+                            <h3>Graphic Design</h3>
+                            <p>Logos, branding, and marketing materials design.</p>
+                            <ul class="service-features"><li>Logo Design</li><li>Brand Identity</li><li>Print Materials</li></ul>
+                            <div class="service-price">Starting at $1</div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon"><i class="ri-video-line"></i></div>
+                            <h3>Video Editing</h3>
+                            <p>Professional editing for commercials and social media.</p>
+                            <ul class="service-features"><li>Social Media Content</li><li>Corporate Presentations</li><li>Color Grading</li></ul>
+                            <div class="service-price">Starting at $2</div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon"><i class="ri-brush-line"></i></div>
+                            <h3>UI/UX Design</h3>
+                            <p>Designing engaging user interfaces and experiences.</p>
+                            <ul class="service-features"><li>Website Design</li><li>Mobile App Design</li><li>Prototyping</li></ul>
+                            <div class="service-price">Coming Soon!</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="page-section animated">
+                <div class="contact">
+                    <h2>Get In Touch</h2>
+                    <p class="contact-intro">Have a project in mind? Let's discuss bagaimana kita bisa bekerja sama.</p>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item"><div class="contact-icon"><i class="ri-map-pin-line"></i></div><div class="contact-details"><h3>Location</h3><p>Tulungagung, Indonesia</p></div></div>
+                            <div class="contact-item"><div class="contact-icon"><i class="ri-mail-line"></i></div><div class="contact-details"><h3>Email</h3><p>alvinwdntr@gmail.com</p></div></div>
+                            <div class="social-links"><h3>Follow Me</h3><div class="social-icons"><a href="https://github.com/Vinxy-id"><i class="ri-github-fill"></i></a><a href="https://www.linkedin.com/in/alvin-widiantara-041067360/"><i class="ri-linkedin-fill"></i></a></div></div>
+                        </div>
+                        <div class="contact-form">
+                            <form id="contactForm">
+                                <div class="form-group"><input type="text" name="from_name" placeholder="Your Name" required></div>
+                                <div class="form-group"><input type="email" name="from_email" placeholder="Your Email" required></div>
+                                <div class="form-group"><input type="text" name="subject" placeholder="Subject" required></div>
+                                <div class="form-group"><textarea name="message" placeholder="Your Message" required></textarea></div>
+                                <button type="submit" class="submit-btn">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
-<script src="js/mobile.js"></script>
+
+    <!-- Unified Script -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
